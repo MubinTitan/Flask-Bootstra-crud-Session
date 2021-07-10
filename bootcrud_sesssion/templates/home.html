@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" -->
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" src={{url_for('static', filename="/css/bootstrap.min.css")}} -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <title>Welcome to CRUD with Search</title>
+</head>
+
+<body>
+    <!-- <h1>Welcome to the page</h1> -->
+
+    <!-- {{msg}} -->
+    <!-- <br> {{sessi}} -->
+    <h1 align="center">Welcome to page with session</h1>
+    <h2 align="center">your session name is : {{sessi}}</h2>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+
+            <form class="form-inline" method="POST" action="/user_insert">
+                <input class="form-control mr-sm-2" type="search" placeholder="insert" aria-label="Search" name="uinsert">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="usubmit">Search</button>
+            </form>
+        </nav>
+
+
+        <br>
+
+        <!-- <nav class="navbar navbar-light bg-light">
+            <form class="form-inline" method="POST" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
+            </form>
+        </nav> -->
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">email</th>
+                    <th scope="col">description</th>
+                    <!-- <th scope="col">password</th> -->
+
+                    <!-- <th scope="col">Update</th>
+                    <th scope="col">Delete</th> -->
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <th scope="row">{{datas.id}}</th>
+                    <td>{{datas.email}}</td>
+                    <td>{{datas.description}}</td>
+                    <!-- <td>{{datas.password}}</td> -->
+                    
+                </tr>
+
+                {%for du in datass%}
+                <tr>
+                    <th scope="row">{{du.id}}</th>
+                    <td>{{du.name}}</td>
+                    <td>{{du.desc}}</td>
+                    <!-- <td> </td> -->
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <!-- <form>
+            <a href="/">login</a>
+            <a href="/register_details">register</a>
+        </form> -->
+
+        <form>
+            <!-- <a href="/">Logout</a> -->
+            <a href="/logout">Logout</a>
+        </form>
+    </div>
+
+    <br>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ -->
+</body>
+
+<!--"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"-->
+
+</html>
